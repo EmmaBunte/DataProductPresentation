@@ -1,0 +1,16 @@
+{
+    "contents" : "---\ntitle       : BMI Calculator\nsubtitle    : \nauthor      : Emma\njob         : \nframework   : io2012        # {io2012, html5slides, shower, dzslides, ...}\nhighlighter : highlight.js  # {highlight.js, prettify, highlight}\nhitheme     : tomorrow      # \nwidgets     : [mathjax]            # {mathjax, quiz, bootstrap}\nmode        : selfcontained # {standalone, draft}\nknit        : slidify::knit2slides\n---\n\n## First World Problem\n  \nOne of the biggest first world problems is obesitas.  \nThe massive amounts of junk food and artifical food make us fat. But how fat does it make us?  \n    \nFor this I developed a widget that calculates your Body Mass Index, or BMI.  \nThrough this BMI you can see if you have a normal weight or have obesitas.\n\n--- \n\n## BMI Calculator\n  \nFirst of all you fill in your weight in kg and your length in cm.  \n  \nThen you click submit and the calculator will calculate your BMI and give the lower and upper bound of the normal weight category.  \n  \n    \nBMI lower than 18.5 : Underweight  \nBMI 18.5-25 : Normal weight  \nBMI 25-30 : Overweight  \nBMI above 30 : Obesitas  \n\n--- \n\n## BMI Function\n  \nThe app performs a simple calculation based on the submitted length in cm and weight in kg:\n$$BMI= \\frac{weightkg}{(lengthcm / 100) * (lengthcm / 100)}$$\n  \n  \nBesides calculating the BMI based on the inputs, the weight interval for normal weight is also calculated. A BMI between 18.5 and 25 is considered normal weight.  \n  \nThe calculator calculates the weights for these BMI's for the submitted length in cm:\n$$weightkg= 18.5 * (lengthcm / 100) * (lengthcm / 100)$$\n$$weightkg= 25 * (lengthcm / 100) * (lengthcm / 100)$$\n\n--- \n\n## Example\nYou fill in a length of 165 cm and a weight of 75 kg.  \nThe app will run the followeing formulas\n```{r}\nweightkg <-75\nlengthcm<-165\nBMI  <- weightkg/((lengthcm / 100) * (lengthcm / 100))\nweight_kg_low <- 18.5 * (lengthcm / 100) * (lengthcm / 100)\nweight_kg_up <- 25 * (lengthcm / 100) * (lengthcm / 100)\n```\n\n---\n\n## Results\n\n```{r}\nBMI \nweight_kg_low \nweight_kg_up\n```",
+    "created" : 1456684662568.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2048722689",
+    "id" : "56AEA4AD",
+    "lastKnownWriteTime" : 1456689898,
+    "path" : "~/0 Data Scientist/Cursussen/Data Scientist Specialization/9. Developing Data Products/Opdrachten/BMI_Calculator_presentation/BMI_Calculator_Presentation/index.Rmd",
+    "project_path" : "BMI_Calculator_Presentation/index.Rmd",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}

@@ -1,0 +1,71 @@
+---
+title       : BMI Calculator
+subtitle    : 
+author      : Emma
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## First World Problem
+  
+One of the biggest first world problems is obesitas.  
+The massive amounts of junk food and artifical food make us fat. But how fat does it make us?  
+    
+For this I developed a widget that calculates your Body Mass Index, or BMI.  
+Through this BMI you can see if you have a normal weight or have obesitas.
+
+--- 
+
+## BMI Calculator
+  
+First of all you fill in your weight in kg and your length in cm.  
+  
+Then you click submit and the calculator will calculate your BMI and give the lower and upper bound of the normal weight category.  
+  
+    
+BMI lower than 18.5 : Underweight  
+BMI 18.5-25 : Normal weight  
+BMI 25-30 : Overweight  
+BMI above 30 : Obesitas  
+
+--- 
+
+## BMI Function
+  
+The app performs a simple calculation based on the submitted length in cm and weight in kg:
+$$BMI= \frac{weightkg}{(lengthcm / 100) * (lengthcm / 100)}$$
+  
+  
+Besides calculating the BMI based on the inputs, the weight interval for normal weight is also calculated. A BMI between 18.5 and 25 is considered normal weight.  
+  
+The calculator calculates the weights for these BMI's for the submitted length in cm:
+$$weightkg= 18.5 * (lengthcm / 100) * (lengthcm / 100)$$
+$$weightkg= 25 * (lengthcm / 100) * (lengthcm / 100)$$
+
+--- 
+
+## Example
+You fill in a length of 165 cm and a weight of 75 kg.  
+The app will run the followeing formulas
+```{r}
+weightkg <-75
+lengthcm<-165
+BMI  <- weightkg/((lengthcm / 100) * (lengthcm / 100))
+weight_kg_low <- 18.5 * (lengthcm / 100) * (lengthcm / 100)
+weight_kg_up <- 25 * (lengthcm / 100) * (lengthcm / 100)
+```
+
+---
+
+## Results
+
+```{r}
+BMI 
+weight_kg_low 
+weight_kg_up
+```
